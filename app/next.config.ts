@@ -8,11 +8,7 @@ const nextConfig: NextConfig = {
 	// as `<pkg>/styles.css` and imported in _app.tsx), so they don't need to be
 	// transpiled here. Only a couple of third-party ESM-only charting libs and
 	// your local, untranspiled workspace modules do.
-	transpilePackages: [
-		"@mantine/charts",
-		"recharts",
-		"@instance/example-module",
-	],
+	transpilePackages: ["@mantine/charts", "recharts", "@ocelescope/ocelot"],
 	rewrites: async () => [
 		{ source: "/api/external/:path*", destination: `${apiBase}/:path*` },
 	],

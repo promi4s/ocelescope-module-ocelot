@@ -21,8 +21,11 @@
       "@/*": [
         "./*"
       ],
-      "@instance/example-module": [
-        "../frontend-modules/example/src/index.ts"
+      "@ocelescope/ocelot": [
+        "../frontend-modules/ocelot/src/index.ts"
+      ],
+      "@ocelescope/ocelot/styles.css": [
+        "../frontend-modules/ocelot/src/styles.css"
       ]
     }
   },
