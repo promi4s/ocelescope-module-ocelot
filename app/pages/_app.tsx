@@ -12,6 +12,7 @@ import "@xyflow/react/dist/style.css";
 
 // @ocelescope packages' own (scoped) styles.
 import "@ocelescope/core/styles.css";
+import "@ocelescope/ocelot/styles.css";
 
 import { OcelescopeApp } from "@ocelescope/core";
 import config from "../ocelescope.config";

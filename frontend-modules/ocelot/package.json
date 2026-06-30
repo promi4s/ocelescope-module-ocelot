@@ -1,67 +1,67 @@
 {
-  "name": "@ocelescope/ocelot",
-  "type": "module",
-  "version": "0.1.2",
-  "description": "A module for inspections of OCELs",
-  "author": "Görkem-Emre Öztürk <goerkem.oeztuerk@rwth-aachen.de>",
-  "license": "MIT",
-  "homepage": "https://www.ocelescope.org",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/promi4s/ocelescope.git"
-  },
-  "bugs": {
-    "url": "https://github.com/promi4s/ocelescope/issues"
-  },
-  "exports": {
-    ".": "./dist/index.js",
-    "./package.json": "./package.json",
-    "./styles.css": "./dist/style.css"
-  },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "dev": "tsdown --watch ./src",
-    "typecheck": "tsc --noEmit",
-    "build": "orval && tsdown",
-    "generate:api": "uv run ocelescope-backend openapi --module ocelot"
-  },
-  "peerDependencies": {
-    "@dagrejs/dagre": "catalog:",
-    "@mantine/core": "catalog:",
-    "@mantine/hooks": "catalog:",
-    "@ocelescope/api-base": "workspace:^",
-    "@ocelescope/core": "workspace:^",
-    "@tanstack/react-query": "catalog:",
-    "@xyflow/react": "catalog:",
-    "dayjs": "catalog:",
-    "elkjs": "catalog:",
-    "file-saver": "catalog:",
-    "html-to-image": "catalog:",
-    "lucide-react": "catalog:",
-    "mantine-datatable": "catalog:",
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "recharts": "catalog:",
-    "axios": "catalog:",
-    "@ocelescope/api-client": "workspace:^"
-  },
-  "devDependencies": {
-    "@tsdown/css": "catalog:",
-    "@types/css-modules": "catalog:",
-    "@types/file-saver": "catalog:",
-    "@types/node": "catalog:",
-    "@types/react": "catalog:",
-    "@types/react-dom": "catalog:",
-    "@ocelescope/api-config": "workspace:^",
-    "tsdown": "catalog:",
-    "typescript": "catalog:"
-  }
+	"name": "@ocelescope/ocelot",
+	"type": "module",
+	"version": "0.1.2",
+	"description": "A module for inspections of OCELs",
+	"author": "Görkem-Emre Öztürk <goerkem.oeztuerk@rwth-aachen.de>",
+	"license": "MIT",
+	"homepage": "https://www.ocelescope.org",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/promi4s/ocelescope.git"
+	},
+	"bugs": {
+		"url": "https://github.com/promi4s/ocelescope/issues"
+	},
+	"exports": {
+		".": "./dist/index.js",
+		"./package.json": "./package.json",
+		"./styles.css": "./dist/style.css"
+	},
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"dev": "tsdown --watch ./src",
+		"typecheck": "tsc --noEmit",
+		"build": "orval && tsdown",
+		"generate:api": "uv run ocelescope-backend openapi --module ocelot"
+	},
+	"peerDependencies": {
+		"@dagrejs/dagre": "^3.0.0",
+		"@mantine/core": "^9.4.0",
+		"@mantine/hooks": "^9.4.0",
+		"@ocelescope/api-base": "^0.1.0",
+		"@ocelescope/core": "^0.1.2",
+		"@tanstack/react-query": "^5.90.21",
+		"@xyflow/react": "^12.10.1",
+		"dayjs": "^1.11.19",
+		"elkjs": "^0.11.0",
+		"file-saver": "^2.0.5",
+		"html-to-image": "1.11.13",
+		"lucide-react": "^1.0.0",
+		"mantine-datatable": "^9.3.1",
+		"react": "^19.2.0",
+		"react-dom": "^19.2.0",
+		"recharts": "^3.2.1",
+		"axios": "^1.18.0",
+		"@ocelescope/api-client": "^0.1.0"
+	},
+	"devDependencies": {
+		"@tsdown/css": "^0.22.0",
+		"@types/css-modules": "^1.0.5",
+		"@types/file-saver": "^2.0.7",
+		"@types/node": "^25.0.3",
+		"@types/react": "^19.2.7",
+		"@types/react-dom": "^19.2.3",
+		"@ocelescope/api-config": "^0.1.0",
+		"tsdown": "^0.22.0",
+		"typescript": "^5.9.3"
+	}
 }

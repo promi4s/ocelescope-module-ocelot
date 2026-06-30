@@ -16,7 +16,7 @@
 		"@ocelescope/management": "^0.1.2",
 		"@ocelescope/log-overview": "^0.1.2",
 		"@ocelescope/plugin": "^0.1.2",
-		"@instance/example-module": "workspace:*",
+		"@ocelescope/ocelot": "workspace:*",
 		"@mantine/core": "^9.4.0",
 		"@mantine/dates": "^9.4.0",
 		"@mantine/charts": "^9.4.0",
