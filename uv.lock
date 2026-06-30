@@ -19,7 +19,7 @@ resolution-markers = [
 [manifest]
 members = [
     "ocelescope-instance",
-    "ocelescope-module-example",
+    "ocelescope-module-ocelot",
 ]
 
 [[package]]
@@ -1196,27 +1196,16 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "ocelescope-backend" },
-    { name = "ocelescope-module-example" },
     { name = "ocelescope-module-filter" },
+    { name = "ocelescope-module-ocelot" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "ocelescope-backend", specifier = ">=0.1.1" },
-    { name = "ocelescope-module-example", editable = "backend-modules/example" },
     { name = "ocelescope-module-filter", specifier = ">=0.1.1" },
+    { name = "ocelescope-module-ocelot", editable = "backend-modules/ocelescope_module_ocelot" },
 ]
-
-[[package]]
-name = "ocelescope-module-example"
-version = "0.1.0"
-source = { editable = "backend-modules/example" }
-dependencies = [
-    { name = "ocelescope-backend" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "ocelescope-backend", specifier = ">=0.1.1" }]
 
 [[package]]
 name = "ocelescope-module-filter"
@@ -1231,6 +1220,17 @@ sdist = { url = "https://files.pythonhosted.org/packages/e1/99/e292d70135a9297e2
 wheels = [
     { url = "https://files.pythonhosted.org/packages/6c/c1/4b6ae40bf434a9be195e6e7e1c2362f1e7abc73df716b1f5b2e0788c9d2c/ocelescope_module_filter-0.1.1-py3-none-any.whl", hash = "sha256:438e9a5e2a4c8e41be376bf40dee986928bc78241da83e3122a95ef95ec26c24", size = 3662, upload-time = "2026-06-29T12:24:52.99Z" },
 ]
+
+[[package]]
+name = "ocelescope-module-ocelot"
+version = "0.1.0"
+source = { editable = "backend-modules/ocelescope_module_ocelot" }
+dependencies = [
+    { name = "ocelescope-backend" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "ocelescope-backend", specifier = ">=0.1.1" }]
 
 [[package]]
 name = "orjson"

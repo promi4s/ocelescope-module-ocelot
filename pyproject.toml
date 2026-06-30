@@ -6,11 +6,11 @@ requires-python = ">=3.11"
 dependencies = [
   "ocelescope-backend>=0.1.1",
   "ocelescope-module-filter>=0.1.1",
-  "ocelescope-module-example",
+  "ocelescope-module-ocelot",
 ]
 
 [tool.uv.workspace]
 members = ["backend-modules/*"]
 
 [tool.uv.sources]
-ocelescope-module-example = { workspace = true }
+ocelescope-module-ocelot = { workspace = true }

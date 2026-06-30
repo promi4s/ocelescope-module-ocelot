@@ -1,14 +1,12 @@
 [project]
-name = "ocelescope-module-example"
+name = "ocelescope-module-ocelot"
 version = "0.1.0"
-description = "An example Ocelescope backend module"
+description = "An ocelescope module for giving paginated exploration in ocelescope"
 requires-python = ">=3.11"
-dependencies = [
-  "ocelescope-backend>=0.1.1",
-]
+dependencies = ["ocelescope-backend>=0.1.1"]
 
 [project.entry-points."ocelescope_backend.modules"]
-example = "ocelescope_module_example.module:Example"
+ocelot = "ocelescope_module_ocelot.module:Ocelot"
 
 [build-system]
 requires = ["uv_build>=0.11.20,<0.12.0"]
