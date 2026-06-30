@@ -1,0 +1,12 @@
+{
+	"base_path": "event_logs",
+	"event_logs": [
+		{
+			"key": "containerLogistics",
+			"name": "Container Logistics",
+			"version": "3",
+			"file": "container_logistics.json",
+			"url": "https://zenodo.org/records/18373888"
+		}
+	]
+}
