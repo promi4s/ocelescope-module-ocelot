@@ -156,6 +156,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.17)
+      orval:
+        specifier: ^8.5.2
+        version: 8.19.0(typescript@5.9.3)
       tsdown:
         specifier: ^0.22.0
         version: 0.22.3(@tsdown/css@0.22.3)(typescript@5.9.3)

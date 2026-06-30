@@ -36,7 +36,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Generate API client and build packages
-        run: pnpm run api:sync
+        run: pnpm run build:modules
 
       - name: Publish (skips versions already on npm)
         env:
