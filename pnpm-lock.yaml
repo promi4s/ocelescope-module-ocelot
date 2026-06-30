@@ -135,6 +135,9 @@ importers:
       '@ocelescope/api-config':
         specifier: ^0.1.0
         version: 0.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(typescript@5.9.3)
+      '@tsconfig/strictest':
+        specifier: ^2.0.8
+        version: 2.0.8
       '@tsdown/css':
         specifier: ^0.22.0
         version: 0.22.3(jiti@2.7.0)(postcss@8.4.31)(tsdown@0.22.3)(yaml@2.9.0)
@@ -1191,6 +1194,9 @@ packages:
     resolution: {integrity: sha512-seDkr6kzGzX1okaaTtZPtgA688CDPlXUz1C6xSg0ESqn04Vuc8tlrYms1s3de+znBqhPVxFRfpAfUf+6XvfPWg==}
     peerDependencies:
       react: ^18 || ^19
+
+  '@tsconfig/strictest@2.0.8':
+    resolution: {integrity: sha512-XnQ7vNz5HRN0r88GYf1J9JJjqtZPiHt2woGJOo2dYqyHGGcd6OLGqSlBB6p1j9mpzja6Oe5BoPqWmeDx6X9rLw==}
 
   '@tsdown/css@0.22.3':
     resolution: {integrity: sha512-kmb/31lcI/Pk26WeWJxQDLy8qkvoyfBkw3n9aN6bflKkoeLqnV2BRbndzfPRJY+Ziahi796gfgDVc+ftLIgWVw==}
@@ -4218,6 +4224,8 @@ snapshots:
     dependencies:
       '@tanstack/query-core': 5.101.2
       react: 19.2.7
+
+  '@tsconfig/strictest@2.0.8': {}
 
   '@tsdown/css@0.22.3(jiti@2.7.0)(postcss@8.4.31)(tsdown@0.22.3)(yaml@2.9.0)':
     dependencies:
