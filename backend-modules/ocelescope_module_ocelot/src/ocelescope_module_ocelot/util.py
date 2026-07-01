@@ -198,7 +198,7 @@ def get_paginated_event_table(
 
     e2o_table = (
         ocel.e2o.df.loc[ocel.e2o.df[EID_COL].isin(events_table[EID_COL])]
-        .groupby([EID_COL, E2O_QUALIFIER, OTYPE_COL])[OID_COL]
+        .groupby([EID_COL, E2O_QUALIFIER, OTYPE_COL], dropna=False)[OID_COL]
         .agg(list)
     )
 
@@ -303,7 +303,9 @@ def get_paginated_object_table(
     typed_o2o = ocel.o2o.typed_df
     o2o_table = (
         typed_o2o.loc[typed_o2o[O2O_SOURCE_ID].isin(object_table.index)]
-        .groupby([O2O_SOURCE_ID, O2O_QUALIFIER, O2O_TARGET_TYPE])[O2O_TARGET_ID]
+        .groupby([O2O_SOURCE_ID, O2O_QUALIFIER, O2O_TARGET_TYPE], dropna=False)[
+            O2O_TARGET_ID
+        ]
         .agg(list)
     )
 
