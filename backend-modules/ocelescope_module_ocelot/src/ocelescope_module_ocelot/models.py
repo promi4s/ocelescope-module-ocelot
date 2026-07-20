@@ -1,18 +1,18 @@
 from dataclasses import dataclass
 from datetime import datetime
-from typing import Any, Dict, List, Literal, Optional
-
-from pydantic import BaseModel
+from typing import Any, List, Literal, Optional
 
 
-class OcelEntity(BaseModel):
+@dataclass
+class OcelEntity:
     id: str
+    attributes: dict[str, Any]
+    relations: dict[str, List[str]]
     timestamp: Optional[datetime] = None
-    attributes: Dict[str, Any]
-    relations: Dict[str, List[str]]
 
 
-class PaginatedResponse(BaseModel):
+@dataclass
+class PaginatedResponse:
     page: int
     page_size: int
     total_pages: int

@@ -7,8 +7,8 @@ from ocelescope_module_ocelot.models import EntityTableColumn, PaginatedResponse
 from ocelescope_module_ocelot.util import (
     get_activity_columns_def,
     get_object_columns_def,
-    get_paginated_event_table,
-    get_paginated_object_table,
+    paginate_events,
+    paginate_objects,
 )
 
 router = APIRouter()
@@ -27,13 +27,13 @@ def get_events(
     sort_by: Annotated[str | None, Query()] = None,
     ascending: Annotated[bool, Query()] = True,
 ):
-    return get_paginated_event_table(
+    return paginate_events(
         ocel=ocel,
         activity=type,
-        page_index=page,
+        page=page,
         page_size=page_size,
         sort_by=sort_by,
-        ascending=ascending,
+        descending=not ascending,
     )
 
 
@@ -50,13 +50,13 @@ def get_objects(
     sort_by: Annotated[str | None, Query()] = None,
     ascending: Annotated[bool, Query()] = True,
 ):
-    return get_paginated_object_table(
+    return paginate_objects(
         ocel=ocel,
         object_type=type,
-        page_index=page,
+        page=page,
         page_size=page_size,
         sort_by=sort_by,
-        ascending=ascending,
+        descending=not ascending,
     )
 
 
