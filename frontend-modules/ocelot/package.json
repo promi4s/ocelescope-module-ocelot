@@ -37,7 +37,7 @@
 		"@dagrejs/dagre": "^3.0.0",
 		"@mantine/core": "^9.4.0",
 		"@mantine/hooks": "^9.4.0",
-		"@ocelescope/api-base": "^0.1.0",
+		"@ocelescope/api-base": "^0.2.0",
 		"@ocelescope/core": "^0.1.2",
 		"@tanstack/react-query": "^5.90.21",
 		"@xyflow/react": "^12.10.1",

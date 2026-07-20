@@ -11,7 +11,7 @@
 	},
 	"dependencies": {
 		"@ocelescope/core": "^0.1.2",
-		"@ocelescope/filter": "^0.1.2",
+		"@ocelescope/filter": "^0.2.0",
 		"@ocelescope/discovery": "^0.1.2",
 		"@ocelescope/management": "^0.1.2",
 		"@ocelescope/log-overview": "^0.1.2",
