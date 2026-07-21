@@ -31,6 +31,20 @@ from ocelescope_module_ocelot.models import (
 TOTAL_COL = "@@total"
 
 
+def _relation_key(relation_qualifier: str) -> str:
+    """SQL for a relation's key: ``ObjectType`` or ``ObjectType (qualifier)``.
+
+    The related object's type always carries the key, so qualifiers that share a
+    name across types stay apart -- and an unqualified edge still lands under a
+    key of its own. Expects the relation table aliased ``r`` and the joined
+    objects table aliased ``o``.
+    """
+    return (
+        f"o.{ident(OTYPE_COL)} "
+        f"|| coalesce(' (' || nullif(r.{ident(relation_qualifier)}, '') || ')', '')"
+    )
+
+
 def _paginate(
     ocel: OCEL,
     *,
@@ -52,8 +66,8 @@ def _paginate(
 
     One query: the page is cut first, its total comes from a window function,
     and only that page's relations are joined into a ``key -> [related ids]``
-    map, keyed by qualifier and falling back to the related object's type when
-    the edge has none. Aggregating after the LIMIT is what keeps the relation
+    map, keyed by the related object's type and its qualifier (see
+    ``_relation_key``). Aggregating after the LIMIT is what keeps the relation
     table's many-to-many fan-out from multiplying the page's rows -- and it lets
     DuckDB push the page's ids into the relation scan as a dynamic filter, so
     the relation table is never grouped as a whole.
@@ -70,10 +84,7 @@ def _paginate(
         ),
         edges AS (
             SELECT r.{ident(relation_source)} AS id,
-                   coalesce(
-                       nullif(r.{ident(relation_qualifier)}, ''),
-                       o.{ident(OTYPE_COL)}
-                   ) AS key,
+                   {_relation_key(relation_qualifier)} AS key,
                    list(r.{ident(relation_target)}) AS ids
             FROM {relation_table} r
             JOIN page p ON r.{ident(relation_source)} = p.{ident(id_col)}
@@ -142,19 +153,15 @@ def _column_defs(
     Two queries, both scoped to ``filter_value``:
 
     * the relation keys reachable from this type -- built with the *same*
-      ``coalesce(nullif(qualifier, ''), type)`` expression ``_paginate`` uses,
-      so every accessor here is guaranteed to be a key in ``OcelEntity.relations``
+      ``_relation_key`` expression ``_paginate`` uses, so every accessor here is
+      guaranteed to be a key in ``OcelEntity.relations``
     * the attribute columns that are non-NULL for at least one row, since the
       entity table is wide across all types and most columns will be empty
     """
-    relation_key = (
-        f"coalesce(nullif(r.{ident(relation_qualifier)}, ''), o.{ident(OTYPE_COL)})"
-    )
+    relation_key = _relation_key(relation_qualifier)
     relation_rows = ocel.sql(
         f"""
-        SELECT DISTINCT {relation_key} AS key,
-                        r.{ident(relation_qualifier)} AS qualifier,
-                        o.{ident(OTYPE_COL)} AS target_type
+        SELECT DISTINCT {relation_key} AS key
         FROM {relation_table} r
         JOIN {table} e ON r.{ident(relation_source)} = e.{ident(id_col)}
         LEFT JOIN {OBJECTS_TABLE} o ON r.{ident(relation_target)} = o.{ident(OID_COL)}
@@ -165,12 +172,7 @@ def _column_defs(
     ).fetchall()
 
     relation_columns = [
-        EntityTableColumn(
-            accessor=key,
-            type="relation",
-            title=key if qualifier else f"{target_type} (untyped)",
-        )
-        for key, qualifier, target_type in relation_rows
+        EntityTableColumn(accessor=key, type="relation") for (key,) in relation_rows
     ]
 
     candidates = [
