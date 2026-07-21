@@ -1,6 +1,7 @@
 from typing import Annotated
 
 from fastapi import APIRouter, Query
+from ocelescope.ocel.constants.pm4py import EID_COL, OID_COL, TIMESTAMP_COL
 from ocelescope_backend.app.dependencies import ApiOcel
 
 from ocelescope_module_ocelot.models import EntityTableColumn, PaginatedResponse
@@ -24,15 +25,17 @@ def get_events(
     type: Annotated[str, Query(description="Activity name")],
     page: Annotated[int, Query(ge=1)] = 1,
     page_size: Annotated[int, Query(ge=1, le=100)] = 10,
-    sort_by: Annotated[str | None, Query()] = None,
+    sort_by: Annotated[str, Query()] = "timestamp",
     ascending: Annotated[bool, Query()] = True,
 ):
+    API_TO_COLUM_MAP = {"id": EID_COL, "timestamp": TIMESTAMP_COL}
+
     return paginate_events(
         ocel=ocel,
         activity=type,
         page=page,
         page_size=page_size,
-        sort_by=sort_by,
+        sort_by=API_TO_COLUM_MAP.get(sort_by, sort_by),
         descending=not ascending,
     )
 
@@ -47,15 +50,18 @@ def get_objects(
     type: Annotated[str, Query(description="Object type name")],
     page: Annotated[int, Query(ge=1)] = 1,
     page_size: Annotated[int, Query(ge=1, le=100)] = 10,
-    sort_by: Annotated[str | None, Query()] = None,
+    sort_by: Annotated[str, Query()] = "id",
     ascending: Annotated[bool, Query()] = True,
 ):
+
+    API_TO_COLUM_MAP = {"id": OID_COL, "timestamp": TIMESTAMP_COL}
+
     return paginate_objects(
         ocel=ocel,
         object_type=type,
         page=page,
         page_size=page_size,
-        sort_by=sort_by,
+        sort_by=API_TO_COLUM_MAP.get(sort_by, sort_by),
         descending=not ascending,
     )
 
