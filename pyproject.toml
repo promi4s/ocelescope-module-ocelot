@@ -5,7 +5,6 @@ description = "An Ocelescope instance: the published backend host plus local mod
 requires-python = ">=3.11"
 dependencies = [
   "ocelescope-backend>=0.2.0",
-  "ocelescope-module-filter>=0.2.0",
   "ocelescope-module-ocel>=0.1.0",
   "ocelescope-module-ocelot",
 ]
