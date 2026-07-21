@@ -26,7 +26,8 @@
 		"@xyflow/react": "^12.10.1",
 		"next": "^16.1.6",
 		"react": "^19.2.0",
-		"react-dom": "^19.2.0"
+		"react-dom": "^19.2.0",
+		"zustand": "^5.0.11"
 	},
 	"devDependencies": {
 		"@types/node": "^25.0.3",
