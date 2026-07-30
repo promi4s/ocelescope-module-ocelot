@@ -10,12 +10,12 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@ocelescope/core": "^0.1.2",
-		"@ocelescope/filter": "^0.2.0",
-		"@ocelescope/discovery": "^0.1.2",
-		"@ocelescope/management": "^0.1.2",
-		"@ocelescope/log-overview": "^0.1.2",
-		"@ocelescope/plugin": "^0.1.2",
+		"@ocelescope/core": "^0.5.0",
+		"@ocelescope/filter": "^0.5.0",
+		"@ocelescope/discovery": "^0.5.0",
+		"@ocelescope/management": "^0.5.0",
+		"@ocelescope/log-overview": "^0.5.0",
+		"@ocelescope/plugin": "^0.5.0",
 		"@ocelescope/ocelot": "workspace:*",
 		"@mantine/core": "^9.4.0",
 		"@mantine/dates": "^9.4.0",
