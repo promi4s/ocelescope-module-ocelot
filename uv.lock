@@ -1331,7 +1331,7 @@ wheels = [
 
 [[package]]
 name = "ocelescope-module-ocelot"
-version = "0.1.1"
+version = "0.5.0"
 source = { editable = "backend-modules/ocelescope_module_ocelot" }
 dependencies = [
     { name = "ocelescope-backend" },
