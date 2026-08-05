@@ -11,6 +11,12 @@
     "dev": "pnpm run dev:backend & pnpm run dev:app",
     "dev:backend": "uv run ocelescope-backend serve --reload --reload-dir backend-modules --env-file .env",
     "dev:app": "pnpm --filter @instance/app dev",
-    "dev:modules": "pnpm -r --parallel --filter \"!@instance/app\" run dev"
+    "dev:modules": "pnpm -r --parallel --filter \"!@instance/app\" run dev",
+    "format:frontend": "biome format --write ./frontend-modules",
+    "format:backend": "uvx ruff format ./backend-modules",
+    "format": "pnpm run format:frontend && pnpm run format:backend"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.7"
   }
 }
