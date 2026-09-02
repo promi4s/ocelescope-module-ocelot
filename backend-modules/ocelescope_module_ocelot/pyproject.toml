@@ -1,6 +1,6 @@
 [project]
 name = "ocelescope-module-ocelot"
-version = "0.6.0"
+version = "0.6.1"
 description = "An ocelescope module for giving paginated exploration in ocelescope"
 requires-python = ">=3.11"
 dependencies = ["ocelescope-backend>=0.6.0"]
