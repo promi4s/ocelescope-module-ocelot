@@ -57,7 +57,7 @@ const ObjectGraph = () => {
   }, [objectCounts, objectAttributes]);
 
   return (
-    <Stack w={"100%"} h={"100%"}>
+    <Stack w={"100%"} h={"100%"} p={"xs"}>
       <Title order={2}>Object Overview</Title>
       <Text c="dimmed" size="sm">
         Get an overview of all object types in this log. Switch between an

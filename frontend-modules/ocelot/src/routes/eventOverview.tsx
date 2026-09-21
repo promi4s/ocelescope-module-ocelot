@@ -20,7 +20,7 @@ const EventOverview = () => {
   return (
     <>
       <LoadingOverlay visible={isEventCountsLoading} />
-      <Stack>
+      <Stack p={"xs"}>
         <Title order={2}>Event Overview</Title>
         <Text c="dimmed" size="sm">
           Get an overview of all event types in this log. Search through them
