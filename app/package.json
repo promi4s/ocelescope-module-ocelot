@@ -1,38 +1,30 @@
 {
-	"name": "@instance/app",
-	"version": "0.1.0",
-	"private": true,
-	"type": "module",
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"typecheck": "tsc --noEmit"
-	},
-	"dependencies": {
-		"@ocelescope/core": "^0.6.0",
-		"@ocelescope/filter": "^0.6.0",
-		"@ocelescope/discovery": "^0.6.0",
-		"@ocelescope/management": "^0.6.0",
-		"@ocelescope/log-overview": "^0.6.0",
-		"@ocelescope/plugin": "^0.6.0",
-		"@ocelescope/ocelot": "workspace:*",
-		"@mantine/core": "^9.4.0",
-		"@mantine/dates": "^9.4.0",
-		"@mantine/charts": "^9.4.0",
-		"@mantine/dropzone": "^9.4.0",
-		"@mantine/notifications": "^9.4.0",
-		"mantine-datatable": "^9.3.1",
-		"@xyflow/react": "^12.10.1",
-		"next": "^16.1.6",
-		"react": "^19.2.0",
-		"react-dom": "^19.2.0",
-		"zustand": "^5.0.11"
-	},
-	"devDependencies": {
-		"@types/node": "^25.0.3",
-		"@types/react": "^19.2.7",
-		"@types/react-dom": "^19.2.3",
-		"typescript": "^5.9.3"
-	}
+  "name": "@instance/app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ocelescope/core": "^0.8.0",
+    "@ocelescope/filter": "^0.8.0",
+    "@ocelescope/discovery": "^0.8.0",
+    "@ocelescope/management": "^0.8.0",
+    "@ocelescope/log-overview": "^0.8.0",
+    "@ocelescope/plugin": "^0.8.0",
+    "@ocelescope/ocelot": "workspace:*",
+    "next": "^16.1.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  }
 }

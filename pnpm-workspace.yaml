@@ -5,6 +5,7 @@ packages:
 # so it opts out of pnpm's minimum-release-age cooldown. Remove this line if you
 # prefer to wait out your global cooldown for newly published dependencies.
 minimumReleaseAge: 0
+dedupePeers: true
 allowBuilds:
   core-js: true
   es5-ext: true

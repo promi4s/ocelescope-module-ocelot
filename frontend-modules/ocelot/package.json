@@ -37,8 +37,8 @@
     "@dagrejs/dagre": "^3.0.0",
     "@mantine/core": "^9.4.0",
     "@mantine/hooks": "^9.4.0",
-    "@ocelescope/api-base": "^0.6.0",
-    "@ocelescope/core": "^0.6.0",
+    "@ocelescope/api-base": "^0.8.0",
+    "@ocelescope/core": "^0.8.0",
     "@tanstack/react-query": "^5.90.21",
     "@xyflow/react": "^12.10.1",
     "dayjs": "^1.11.19",
@@ -51,7 +51,7 @@
     "react-dom": "^19.2.0",
     "recharts": "^3.2.1",
     "axios": "^1.18.0",
-    "@ocelescope/api-client": "^0.6.0"
+    "@ocelescope/api-client": "^0.8.0"
   },
   "devDependencies": {
     "@tsdown/css": "^0.22.0",
