@@ -1,4 +1,4 @@
-import { SimpleGrid } from "@mantine/core";
+import { ScrollArea, SimpleGrid } from "@mantine/core";
 import type {
   RelationCountSummary,
   TypedAttribute,
@@ -49,21 +49,24 @@ const EntityOverview: React.FC<EntityOverviewProps> = ({
   }, [search, relationMap, entityCounts, attributes]);
 
   return (
-    <SimpleGrid cols={{ base: 1, sm: 2, md: 4 }}>
-      {filteredEvents.map(([name, count]) => {
-        return (
-          <EntityCard
-            key={name}
-            count={count}
-            name={name}
-            attributeSummaries={
-              attributes.filter(({ entity_type }) => entity_type === name) ?? []
-            }
-            relationSummaries={relationMap[name] ?? []}
-          />
-        );
-      })}
-    </SimpleGrid>
+    <ScrollArea offsetScrollbars>
+      <SimpleGrid cols={{ base: 1, sm: 2, md: 4 }}>
+        {filteredEvents.map(([name, count]) => {
+          return (
+            <EntityCard
+              key={name}
+              count={count}
+              name={name}
+              attributeSummaries={
+                attributes.filter(({ entity_type }) => entity_type === name) ??
+                []
+              }
+              relationSummaries={relationMap[name] ?? []}
+            />
+          );
+        })}
+      </SimpleGrid>
+    </ScrollArea>
   );
 };
 
