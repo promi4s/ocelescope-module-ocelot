@@ -11,3 +11,10 @@ allowBuilds:
   es5-ext: true
   esbuild: true
   sharp: true
+# Every dependency must come from the catalog below (pnpm add writes it here too).
+catalogMode: strict
+cleanupUnusedCatalogs: true
+catalog:
+  "@types/css-modules": "^1.0.5"
+configDependencies:
+  '@ocelescope/pnpm-plugin-catalog': latest

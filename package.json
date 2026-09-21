@@ -2,7 +2,7 @@
   "name": "ocelescope-instance",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@11.9.0",
+  "packageManager": "pnpm@12.5.1",
   "scripts": {
     "sync": "pnpm run sync:backend && pnpm run sync:frontend",
     "sync:backend": "uv sync",
@@ -17,6 +17,6 @@
     "format": "pnpm run format:frontend && pnpm run format:backend"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.7"
+    "@biomejs/biome": "catalog:"
   }
 }
