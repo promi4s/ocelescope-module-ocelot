@@ -2,11 +2,11 @@
 	"base_path": "event_logs",
 	"event_logs": [
 		{
-			"key": "containerLogistics",
+			"key": "container-logistics",
 			"name": "Container Logistics",
 			"version": "3",
-			"file": "container_logistics.json",
-			"url": "https://zenodo.org/records/18373888"
+			"file": "container_logistics.db",
+			"url": "https://doi.org/10.5281/zenodo.18373888"
 		}
 	]
 }

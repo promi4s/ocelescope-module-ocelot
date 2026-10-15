@@ -1,17 +1,21 @@
+import { readFileSync } from "node:fs";
 import type { NextConfig } from "next";
 
 const apiBase = process.env.EXTERNAL_API_BASE_URL ?? "http://localhost:8000";
+
+// Local frontend modules (`workspace:` dependencies) are compiled from source.
+const { dependencies } = JSON.parse(readFileSync("package.json", "utf8"));
+const localModules = Object.entries<string>(dependencies)
+	.filter(([, version]) => version.startsWith("workspace:"))
+	.map(([name]) => name);
 
 const nextConfig: NextConfig = {
 	reactStrictMode: true,
 	experimental: {
 		proxyClientMaxBodySize: "1000gb",
+		proxyTimeout: 30 * 60 * 1000,
 	},
-	// The published @ocelescope/* packages are self-contained (CSS is exported
-	// as `<pkg>/styles.css` and imported in _app.tsx), so they don't need to be
-	// transpiled here. Only a couple of third-party ESM-only charting libs and
-	// your local, untranspiled workspace modules do.
-	transpilePackages: ["@mantine/charts", "recharts", "@ocelescope/ocelot"],
+	transpilePackages: ["@mantine/charts", "recharts", ...localModules],
 	rewrites: async () => [
 		{ source: "/api/external/:path*", destination: `${apiBase}/:path*` },
 	],

@@ -3,9 +3,10 @@ name = "ocelescope-instance"
 version = "0.1.0"
 description = "An Ocelescope instance: the published backend host plus local modules"
 requires-python = ">=3.11"
+# `pnpm run add:backend` adds local backend modules here.
 dependencies = [
-  "ocelescope-backend>=0.8.0",
-  "ocelescope-module-ocel>=0.8.0",
+  "ocelescope-backend>=0.10.1",
+  "ocelescope-module-ocel>=0.10.1",
   "ocelescope-module-ocelot",
 ]
 

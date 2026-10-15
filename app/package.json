@@ -1,30 +1,26 @@
 {
-  "name": "@instance/app",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@ocelescope/core": "catalog:",
-    "@ocelescope/filter": "catalog:",
-    "@ocelescope/discovery": "catalog:",
-    "@ocelescope/management": "catalog:",
-    "@ocelescope/log-overview": "catalog:",
-    "@ocelescope/plugin": "catalog:",
-    "@ocelescope/ocelot": "workspace:*",
-    "next": "catalog:",
-    "react": "catalog:",
-    "react-dom": "catalog:"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "@types/react": "catalog:",
-    "@types/react-dom": "catalog:",
-    "typescript": "catalog:"
-  }
+	"name": "@instance/app",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@ocelescope/core": "catalog:",
+		"@ocelescope/management": "catalog:",
+		"@ocelescope/ocelot": "workspace:*",
+		"next": "catalog:",
+		"react": "catalog:",
+		"react-dom": "catalog:"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:",
+		"@types/react": "catalog:",
+		"@types/react-dom": "catalog:",
+		"typescript": "catalog:"
+	}
 }

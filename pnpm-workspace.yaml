@@ -1,19 +1,20 @@
 packages:
   - app
   - frontend-modules/*
-# This template intentionally installs freshly-published @ocelescope packages,
-# so it opts out of pnpm's minimum-release-age cooldown. Remove this line if you
-# prefer to wait out your global cooldown for newly published dependencies.
-minimumReleaseAge: 0
+# Wait a day before installing newly published dependencies (protects against
+# broken or compromised releases), but take new Ocelescope releases right away.
+minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - "@ocelescope/*"
+# `pnpm run` only warns about outdated dependencies instead of installing them,
+# so `pnpm run add:module` works before `pnpm run sync`.
+verifyDepsBeforeRun: warn
 dedupePeers: true
 allowBuilds:
   core-js: true
   es5-ext: true
   esbuild: true
   sharp: true
-# Every dependency must come from the catalog below (pnpm add writes it here too).
-catalogMode: strict
-cleanupUnusedCatalogs: true
 catalog:
   "@types/css-modules": "^1.0.5"
 configDependencies:
