@@ -8,7 +8,8 @@
   "homepage": "https://www.ocelescope.org",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/promi4s/ocelescope.git"
+    "url": "git+https://github.com/promi4s/ocelescope-module-ocelot.git",
+    "directory": "frontend-modules/ocelot"
   },
   "bugs": {
     "url": "https://github.com/promi4s/ocelescope/issues"
