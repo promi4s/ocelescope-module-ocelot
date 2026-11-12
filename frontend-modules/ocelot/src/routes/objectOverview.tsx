@@ -7,11 +7,7 @@ import {
   Title,
 } from "@mantine/core";
 import { useDebouncedState } from "@mantine/hooks";
-import {
-  useO2o,
-  useObjectAttributes,
-  useObjectCounts,
-} from "@ocelescope/api-base";
+import { useAttributes, useO2o, useObjectCounts } from "@ocelescope/api-base";
 import { defineModuleRoute, useCurrentOcel } from "@ocelescope/core";
 import { MarkerType } from "@xyflow/react";
 import { SearchIcon } from "lucide-react";
@@ -23,7 +19,9 @@ import Graph, { type NodeComponents } from "../components/Graph";
 const ObjectGraph = () => {
   const { id: ocelId } = useCurrentOcel();
   const { data: o2o } = useO2o(ocelId);
-  const { data: objectAttributes } = useObjectAttributes(ocelId);
+  const { data: objectAttributes } = useAttributes(ocelId, {
+    entity_type: "objects",
+  });
   const { data: objectCounts } = useObjectCounts(ocelId);
 
   const [searchValue, setSearchValue] = useDebouncedState("", 200);
@@ -47,7 +45,7 @@ const ObjectGraph = () => {
                 name={objectName}
                 maw={300}
                 attributeSummaries={objectAttributes.filter(
-                  ({ entity_type }) => entity_type === objectName,
+                  ({ entity_types }) => entity_types.includes(objectName),
                 )}
               />
             ),

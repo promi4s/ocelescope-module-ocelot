@@ -50,8 +50,7 @@
     "lucide-react": "catalog:",
     "mantine-datatable": "catalog:",
     "react": "catalog:",
-    "react-dom": "catalog:",
-    "recharts": "catalog:"
+    "react-dom": "catalog:"
   },
   "devDependencies": {
     "@ocelescope/api-config": "catalog:",

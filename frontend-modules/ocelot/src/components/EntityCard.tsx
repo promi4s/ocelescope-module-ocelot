@@ -1,13 +1,10 @@
 import { Divider, Flex, Table, Text } from "@mantine/core";
-import type {
-  RelationCountSummary,
-  TypedAttribute,
-} from "@ocelescope/api-base";
+import type { AttributeInfo, RelationCountSummary } from "@ocelescope/api-base";
 
 type EntityCardProps = {
   name: string;
   count: number;
-  attributeSummaries?: TypedAttribute[];
+  attributeSummaries?: AttributeInfo[];
   relationSummaries?: RelationCountSummary[];
   maw?: number;
 };

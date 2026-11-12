@@ -1,15 +1,12 @@
 import { ScrollArea, SimpleGrid } from "@mantine/core";
-import type {
-  RelationCountSummary,
-  TypedAttribute,
-} from "@ocelescope/api-base";
+import type { AttributeInfo, RelationCountSummary } from "@ocelescope/api-base";
 import { useMemo } from "react";
 import EntityCard from "./EntityCard";
 
 type EntityOverviewProps = {
   entityCounts: Record<string, number>;
   relations: RelationCountSummary[];
-  attributes: TypedAttribute[];
+  attributes: AttributeInfo[];
   search?: string;
 };
 
@@ -42,8 +39,9 @@ const EntityOverview: React.FC<EntityOverviewProps> = ({
             qualifier.toLowerCase().includes(toSearch),
         ) ||
         attributes?.some(
-          ({ name, entity_type }) =>
-            event === entity_type && name.toLowerCase().includes(toSearch),
+          ({ name, entity_types }) =>
+            entity_types.includes(event) &&
+            name.toLowerCase().includes(toSearch),
         ),
     );
   }, [search, relationMap, entityCounts, attributes]);
@@ -58,8 +56,9 @@ const EntityOverview: React.FC<EntityOverviewProps> = ({
               count={count}
               name={name}
               attributeSummaries={
-                attributes.filter(({ entity_type }) => entity_type === name) ??
-                []
+                attributes.filter(({ entity_types }) =>
+                  entity_types.includes(name),
+                ) ?? []
               }
               relationSummaries={relationMap[name] ?? []}
             />
